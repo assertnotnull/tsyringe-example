@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "target": "esnext",
+    "lib": ["esnext"],
+    "moduleResolution": "node",
+    "strict": true,
+    "types": ["node"],
+    "sourceMap": true,
+    "preserveConstEnums": true,
+    "esModuleInterop": true
+  }
+}
