@@ -1,4 +1,5 @@
 import express from "express"
+import passport from "passport"
 import "reflect-metadata"
 import { container } from "tsyringe"
 import "./container"
@@ -10,6 +11,9 @@ const app = express()
 
 const bookRoutes = container.resolve(BookController)
 const authorRoutes = container.resolve(AuthorController)
+
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.use("/books", bookRoutes.getRoutes())
 app.use("/authors", authorRoutes.getRoutes(container))
