@@ -8,9 +8,9 @@ import BookController from "./src/controller/book"
 const port = 5000
 const app = express()
 
-const bookRoutes = container.resolve(BookController)
-const authorRoutes = container.resolve(AuthorController)
+const bookcontroller = container.resolve(BookController)
+const authorController = container.resolve(AuthorController)
 
-app.use("/books", bookRoutes.getRoutes())
-app.use("/authors", authorRoutes.getRoutes(container))
+app.use("/books", bookcontroller.getRoutes())
+app.use("/authors", authorController.getRoutes(container))
 app.listen(port, () => console.log(`listening on port ${port}`))
